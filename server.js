@@ -20,16 +20,20 @@ const db = mongoose.connection
 //Middleware
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
+app.use(express.static("public"))
 app.use((req, res, next) => {
     next()
 })
-app.use(express.static("./public"))
 
-
-//middleware
-
+// Routes - INDUCES
 //Index
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
+    Listing.find({}, (error, listings) => {
+    res.render("index.ejs", {listings})
+    })
+})
+
+app.get("/", (req, res) => {
     Listing.find({}, (error, listings) => {
     res.render("index.ejs", {listings})
     })
