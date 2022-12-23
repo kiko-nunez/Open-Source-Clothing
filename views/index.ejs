@@ -8,15 +8,7 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Welcome to my shop!</h1>
-    <h1>  <a href="/home/"> <input type="button" value="Add New Listing"></a></h1>
-    <% for(let i = 0; i < listings.length; i++) { %>
-    
-        <h1><%= listings[i].name %></a></h1>
-        <a href="/listings/<%=listings[i]._id%>/"> <img src="<%= listings[i].img %>"></a>
-        <h2>$<%= listings[i].price %>.00</a></h2>
-    
-    <% } %>
-
+    <%- include("./partials/nav.ejs") %>
+    <h1>Open Source Apparel</h1>
 </body>
 </html>

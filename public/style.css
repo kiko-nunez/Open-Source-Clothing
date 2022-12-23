@@ -1,3 +1,12 @@
 body {
     background-color: rgb(77, 0, 0);
 }
+h1 {
+    text-align: center;
+    align-content: center;
+    color: white;
+}
+a {
+    text-align: end;
+    color: white;
+}
