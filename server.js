@@ -7,6 +7,8 @@ const methodOverride = require("method-override")
 const userController = require("./controllers/users")
 const session = require("express-session")
 const sessionsController = require("./controllers/sessions")
+const User = require("./models/user")
+// const listings = require("./models/listings")
 const PORT = process.env.PORT || 3005
 const DATABASE_URI = process.env.DATABASE_URI
 
@@ -49,19 +51,20 @@ app.use("/sessions", sessionsController)
 //Index
 app.get("/", (req, res) => {
     if (req.session.currentUser) {
-        res.render("dashboard.ejs", {
-            currentUser: req.session.currentUser
+        Listing.find({}, (error, listings) => {
+        console.log(listings);
+            res.render("dashboard.ejs", {
+            listings,
+            currentUser: req.session.currentUser,
         })
+    })
     } else {
         res.render("index.ejs", {
             currentUser: req.session.currentUser
         })
     }
-    // Listing.find({}, (error, listings) => {
-    // res.render("index.ejs", {listings})
-    // })
 })
-
+//END
 // app.get("/", (req, res) => {
 //     Listing.find({}, (error, listings) => {
 //     res.render("index.ejs", {listings})
