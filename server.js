@@ -52,27 +52,31 @@ app.use("/sessions", sessionsController)
 app.get("/", (req, res) => {
     if (req.session.currentUser) {
         Listing.find({}, (error, listings) => {
-        console.log(listings);
             res.render("dashboard.ejs", {
             listings,
             currentUser: req.session.currentUser,
         })
     })
     } else {
-        res.render("index.ejs", {
+        res.render("index", {
             currentUser: req.session.currentUser
         })
     }
 })
-//END
-// app.get("/", (req, res) => {
-//     Listing.find({}, (error, listings) => {
-//     res.render("index.ejs", {listings})
-//     })
-// })
 
+// New
+app.get("/new", (req, res) => {
+    res.render("new", {
+        currentUser: req.session.currentUser
+    })
+})
 
-// INDUCES
+//Create
+app.post("/", (req, res) => {
+    Listing.create(req.body, (error, listing) => {
+        res.redirect("/")
+    })
+})
 
 //Listening port
 app.listen(PORT, (req, res) => {

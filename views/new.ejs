@@ -5,9 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Listing</title>
 </head>
+<header><a href="/">Back to Dashboard</a></header>
 <body>
-    
+    <h1>Add New Product</h1>
+    <form action="/" method="POST">
+          <!-- fieldset for account info -->
+          <fieldset class="listing-details">
+            <!-- legend for account info -->
+            <legend>LISTING DETAILS</legend>
+              <!-- username -->
+              <label for="name">Listing Name</label>
+              <input type="text" name="name"/>
+              <!-- Image -->
+              <label for="img">Image Address</label>
+              <input type="url" name="img"/>
+                <!-- price -->
+                <label for="price">Price</label>
+                <input type="number" name="price">
+                <!-- size -->
+                <label for="size">Size</label>
+                <input type="text" name="size">
+                <!-- quantity -->
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty">
+
+<!-- biography -->
+                <label for="description">Description</label>
+                <!-- textarea for larger bodies of text -->
+                <textarea placeholder="Describe the item"></textarea>
+                          </fieldset>
+          <!-- submit button -->
+          <input type="submit" value="Add Item">
+        </form>
 </body>
 </html>
