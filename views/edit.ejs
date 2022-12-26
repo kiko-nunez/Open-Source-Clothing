@@ -8,6 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <img src="<%= listing.img %>"><br>
+    <form action="/<%=listing._id%>?_method=PUT" method="POST">
+    Name: <input type="text" name="name" value="<%= listing.name %>"><br>
+    Image Address: <input type="url" name="img" value="<%= listing.img %>"><br>
+    Size: <input type="text" name="size" value="<%= listing.size %>"><br>
+    Price: <input type="number" name="price" value="<%= listing.price %>"><br>
+    Quantity: <input type="number" name="qty" value="<%= listing.qty %>"><br>
+    Description: <br><textarea input type="text" name="description"><%= listing.description %></textarea>
+    <br><input type="submit" value="Submit Changes" /><br>
 </body>
 </html>

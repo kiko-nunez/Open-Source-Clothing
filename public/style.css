@@ -18,6 +18,9 @@ a {
     text-align: end;
     color: white;
 }
+form {
+    color: white;
+}
 label {
     color: white;
     font-size:

@@ -8,6 +8,10 @@
 </head>
 <body>
     <img src="<%= listing.img %>"><br>
+    <h2>Name: <%= listing.name %></h2>
+    <h2>Price: $<%= listing.price %>.00</h2>
+    <h2>Quantity: <%= listing.qty %></h2>
+    <h2>Description: <%= listing.description %></h2>
     <a href="/<%=listing._id%>/edit"><input type="button" value="Edit"></a><br>
 
 </body>

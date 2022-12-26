@@ -71,10 +71,27 @@ app.get("/new", (req, res) => {
     })
 })
 
+//Update
+app.put("/:id", (req, res) => {
+    Listing.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+    },
+    (error, listing) => {
+        res.redirect("/")
+    })
+})
+
 //Create
 app.post("/", (req, res) => {
     Listing.create(req.body, (error, listing) => {
         res.redirect("/")
+    })
+})
+
+//Edit
+app.get("/:id/edit", (req, res) => {
+    Listing.findById(req.params.id, (error, listing) => {
+        res.render("edit", {listing})
     })
 })
 
