@@ -71,6 +71,13 @@ app.get("/new", (req, res) => {
     })
 })
 
+//Delete
+app.delete("/:id", (req, res) => {
+    Listing.findByIdAndDelete(req.params.id, (err) => {
+        res.redirect("/")
+    })
+})
+
 //Update
 app.put("/:id", (req, res) => {
     Listing.findByIdAndUpdate(req.params.id, req.body, {
