@@ -78,6 +78,13 @@ app.post("/", (req, res) => {
     })
 })
 
+//Show
+app.get("/:id", (req, res) => {
+    Listing.findById(req.params.id, (error, listing) => {
+        res.render("show", {listing})
+    })
+})
+
 //Listening port
 app.listen(PORT, (req, res) => {
     console.log(`Listening on port ${PORT}`);
