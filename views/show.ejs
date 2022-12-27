@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.ejs') %>
+    <%- include('./partials/show.ejs') %>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <img src="<%= listing.img %>"><br>
+    <div class="showdiv">
+   <img class="showImg" src="<%= listing.img %>"><br>
     <h2>Name: <%= listing.name %></h2>
     <h2>Price: $<%= listing.price %>.00</h2>
     <h2>Quantity: <%= listing.qty %></h2>
     <h2>Description: <%= listing.description %></h2>
-    <a href="/<%=listing._id%>/edit"><input type="button" value="Edit"></a><br>
+    <a class="showButtons" href="/<%=listing._id%>/edit"><input id="showBtn" type="button" value="Edit"></a><br>
     <form action="/<%= listing._id %>?_method=DELETE" method="POST">
-        <br><a href="/"><input type="submit" value="Delete"></a><br>
-        <br><a href="//<%= listing._id %>"><% if(listing.qty > 0) { %> <input type="button" value="Add to Checkout"></a> <% }
+        <br><a class="showButtons" href="/"><input id="showBtn" type="submit" value="Delete"></a><br>
+        <br><a class="showButtons" href="//<%= listing._id %>"><% if(listing.qty > 0) { %> <input id="showBtn" type="button" value="Add to Checkout"></a> <% }
         else { %>
     alert("Product is out of stock")
        <% } %>
         </form>
-
+    </div>
 </body>
 </html>

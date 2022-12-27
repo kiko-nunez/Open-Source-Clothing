@@ -59,7 +59,7 @@ app.get("/", (req, res) => {
     })
     } else {
         res.render("index", {
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
         })
     }
 })

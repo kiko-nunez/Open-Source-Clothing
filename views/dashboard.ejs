@@ -3,15 +3,16 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
+    <%- include('./partials/nav.ejs')  %>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('./partials/nav.ejs')  %> <a href="/new"> <input type="button" value="Add New Listing"></a>
 	<title>Dashboard</title>
 </head>
 <body>
 	<h1>Dashboard</h1>
     <h2>New Arrivals</h2>
+    <p> <a href="/new"> <input type="button" value="Add New Listing"></a></p>
     <div class="container">
     <% for(let i = 0; i < listings.length; i++) { %>
         <a href="/<%=listings[i]._id%>/"><img src="<%= listings[i].img %>">
