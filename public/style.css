@@ -4,8 +4,10 @@ header {
     display: flex;
 }
 body {
-    background-image: url("https://vip-go.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_407554567.jpg?w=750");
-    -webkit-background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: optimizeQuality;
 }
 h1 {
     text-align: center;
@@ -36,6 +38,11 @@ img {
     border: thick;
 
 }
+#logOut {
+    margin-top: 14px;
+    width: 4%;
+    height: 3%;
+}
 .inputs {
     display: flex;
     justify-content: center;
@@ -65,8 +72,10 @@ flex-wrap: wrap;
 justify-content: flex-start;
 }
 #indexbackground {
-    background-image: url("https://vip-go.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_407554567.jpg?w=750");
-    -webkit-background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: optimizeQuality;
     font-family: serif;
     font-weight: bolder;
     font-style:normal;
@@ -78,7 +87,7 @@ justify-content: flex-start;
 .shopButton {
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 .glow {
     width: 220px;
@@ -94,7 +103,7 @@ justify-content: flex-start;
 }
 .glow:before {
     content: '';
-    background: linear-gradient(10deg, #ff0000, #ff7300, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(10deg, white, black, black, white, white, white, white);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -110,11 +119,11 @@ justify-content: flex-start;
 }
 
 .glow:active {
-    color: #000
+    color: white;
 }
 
 .glow:active:after {
-    background: transparent;
+    background: white;
 }
 
 .glow:hover:before {
