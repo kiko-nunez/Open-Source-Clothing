@@ -71,6 +71,12 @@ app.get("/new", (req, res) => {
     })
 })
 
+app.get("/:id/checkout", (req, res) => {
+    Listing.findById(req.params.id, (error, listing) => {
+        res.render("buy", {listing})
+    })
+})
+
 //Delete
 app.delete("/:id", (req, res) => {
     Listing.findByIdAndDelete(req.params.id, (err) => {
@@ -85,6 +91,19 @@ app.put("/:id", (req, res) => {
     },
     (error, listing) => {
         res.redirect("/")
+    })
+})
+
+app.put("/:id/checkout", (req, res) => {
+    Listing.findById(req.params.id, (error, listing) => {
+        // currentUser: req.session.currentUser
+        const newQuantity = listing.qty - 1
+        const quantity = {qty: newQuantity}
+    Listing.findByIdAndUpdate(req.params.id, quantity, {listing},
+        (error, listing) => {
+            res.redirect("/:id")
+            listing.save()
+        })
     })
 })
 

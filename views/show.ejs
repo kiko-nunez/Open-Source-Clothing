@@ -18,7 +18,7 @@
     <a class="showButtons" href="/<%=listing._id%>/edit"><input id="showBtn" type="button" value="Edit"></a><br>
     <form action="/<%= listing._id %>?_method=DELETE" method="POST">
         <br><a class="showButtons" href="/"><input id="showBtn" type="submit" value="Delete"></a><br>
-        <br><a class="showButtons" href="//<%= listing._id %>"><% if(listing.qty > 0) { %> <input id="showBtn" type="button" value="Add to Checkout"></a> <% }
+        <br><a class="showButtons" href="/<%= listing._id %>/checkout"><% if(listing.qty > 0) { %> <input id="showBtn" type="button" value="Add to Checkout"></a> <% }
         else { %>
     alert("Product is out of stock")
        <% } %>

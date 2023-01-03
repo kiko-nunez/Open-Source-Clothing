@@ -11,17 +11,16 @@
 
 <body>
 	<%- include('../partials/nav.ejs')  %>
-    
-	<h1>Login</h1>
+    <h1>Login</h1>
 	<div class="inputs">
 	<form action='/sessions' method='POST'>
 		<label for="email">Email:</label>
-		<input type="email" name="email" id="email" />
+		<input type="email" name="email" id="email" /><br>
 
-		<label for="password">Password:</label>
-		<input type="password" name="password" id="password" />
+		<br><label for="password">Password:</label>
+		<input type="password" name="password" id="password" /><br>
 
-		<input type="submit" value="Login">
+		<br><input type="submit" value="Login">
 	</div>
 	</form>
     <% if(typeof errorMessage !== "undefined") { %>

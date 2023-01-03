@@ -55,7 +55,7 @@ img {
   height: 30%;
   border-style: ridge;
   border-width: 10px;
-  border-color: #000;
+  border-color: white;
 }
 .showButtons {
     display: flex;
@@ -87,7 +87,7 @@ justify-content: flex-start;
 .shopButton {
   display: flex;
   justify-content: center;
-  margin-top: 15%;
+  margin-top: 6%;
 }
 .glow {
     width: 220px;
