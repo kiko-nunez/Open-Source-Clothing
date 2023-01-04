@@ -15,7 +15,7 @@
     <p> <a href="/new"> <input type="button" value="Add New Listing"></a></p>
     <div class="container">
     <% for(let i = 0; i < listings.length; i++) { %>
-        <a href="/<%=listings[i]._id%>/"><img src="<%= listings[i].img %>">
+        <a href="/<%=listings[i]._id%>/"><img class="images" src="<%= listings[i].img %>">
      <% } %>
     </div>
 </body>

@@ -11,7 +11,7 @@
 
 <body>
 	<%- include('../partials/nav.ejs')  %>
-    <h1>Login</h1>
+    <h1>Login with your email</h1>
 	<div class="inputs">
 	<form action='/sessions' method='POST'>
 		<label for="email">Email:</label>
@@ -20,7 +20,7 @@
 		<br><label for="password">Password:</label>
 		<input type="password" name="password" id="password" /><br>
 
-		<br><input type="submit" value="Login">
+		<br><input id="log" type="submit" value="Login">
 	</div>
 	</form>
     <% if(typeof errorMessage !== "undefined") { %>
