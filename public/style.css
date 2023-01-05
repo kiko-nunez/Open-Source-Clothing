@@ -19,6 +19,11 @@ h2 {
     display: block;
     text-align: center;
 }
+h3 {
+    color: white;
+    display: block;
+    text-align: center;
+}
 a {
     text-align: end;
     color: white;
@@ -37,23 +42,22 @@ img {
     border: thick;
 
 }
-#log {
+.register {
     margin-top: 14px;
     width: 65px;
     height: 3%;
     position: absolute;
     background-color: white;
-    color: red;
+    color: black;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 2 2 rgb(red, red, red);
-
 }
-#log:hover {
-    background-color: transparent;
-    transition: .7s;
+.register:hover {
+    transform: scale(1.1);
+    transition: .2s;
     outline-style: solid;
     box-shadow: red;
 }
@@ -85,6 +89,28 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: flex-start;
 align-items: center;
+margin-left: 10%;
+margin-right: 10%;
+}
+.newProduct {
+    margin: 0;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 10%;
+}
+.newProduct:hover {
+    background-color: green;
+    color: whitesmoke;
+}
+.newProduct:after {
+    background-color: green;
+    opacity: 0;
 }
 .images {
 border-color: white;
@@ -124,6 +150,13 @@ margin-top: 5%;
   justify-content: center;
   margin-top: 6%;
 }
+#email {
+border-radius: 20px;
+}
+#password {
+    border-radius: 20px;
+}
+
 .glow {
     width: 220px;
     height: 50px;
@@ -182,6 +215,49 @@ margin-top: 5%;
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.log {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.341)
+}
+.log p {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.log p:hover {
+    background-color: #ddd;
+    color: black;
+}
+.log p.active {
+    background-color: #2196F3;
+    color: grey;
+  }
+.log input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  @media screen and (max-width: 600px) {
+    .log p, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: max-content;
+      margin: 0;
+      padding: 14px;
+    }
+    .log input[type=text] {
+      border: 1px solid white;
+    }
+  }
 
 .topnav {
     overflow: hidden;

@@ -11,8 +11,8 @@
 </head>
 <body>
 	<h1>Dashboard</h1>
-    <h2>New Arrivals</h2>
-    <p> <a href="/new"> <input type="button" value="Add New Listing"></a></p>
+    <h3>New Arrivals</h3>
+    <p> <a href="/new"> <input class="newProduct" type="button" value="Add New Product"></a></p>
     <div class="container">
     <% for(let i = 0; i < listings.length; i++) { %>
         <a href="/<%=listings[i]._id%>/"><img class="images" src="<%= listings[i].img %>">
