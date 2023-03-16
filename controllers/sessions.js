@@ -12,11 +12,21 @@ sessionsRouter.get("/new", (req, res) => {
 })
 
 // Delete (logout route)
+// sessionsRouter.delete("/", (req, res) => {
+//     req.session.destroy((error) => {
+//         res.redirect("/")
+//     })
+// })
+
 sessionsRouter.delete("/", (req, res) => {
     req.session.destroy((error) => {
-        res.redirect("/")
-    })
-})
+      if (error) {
+        console.log(error);
+      } else {
+        res.redirect("/");
+      }
+    });
+  });
 
 // Create (login route)
 sessionsRouter.post("/", (req, res) => {

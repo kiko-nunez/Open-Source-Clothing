@@ -10,7 +10,7 @@ const sessionsController = require("./controllers/sessions")
 const User = require("./models/user")
 // const listings = require("./models/listings")
 const PORT = process.env.PORT || 3005
-const DATABASE_URI = process.env.DATABASE_URI
+
 
 // Load the env vars
 require("dotenv").config()
@@ -123,8 +123,9 @@ app.get("/:id/edit", (req, res) => {
 
 //Show
 app.get("/:id", (req, res) => {
+    const img = req.params.img
     Listing.findById(req.params.id, (error, listing) => {
-        res.render("show", {listing})
+        res.render("show", img, {listing})
     })
 })
 

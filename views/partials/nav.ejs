@@ -4,9 +4,22 @@
 <div class="topnav">
     <% if(currentUser) { %> 
         <a href="/">Home</a>
-        <form action="/sessions?_method=DELETE" method="POST">
-       <a href="/" value="Log Out">Log Out</a>
-        </form>
+
+        <!-- <form action="/sessions?_method=DELETE" method="POST">
+            <a href="/" value="Log Out">Log Out</a>
+             </form> -->
+
+             <!-- <form id="logout-form" action="/logout" method="POST">
+                <a href="#" onclick="document.getElementById('logout-form').submit(); return false;">Log Out</a>
+              </form> -->
+
+              <form action="/sessions" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Logout</button>
+              </form>
+              
+              
+          
         <% } else { %> 
         <a href="/">Home</a>
         <a href="/users/new">Register</a>
